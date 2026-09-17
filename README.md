@@ -54,6 +54,27 @@ After extracting the data, it is organized into the desired structure using the 
 The cleaned data is now ready to be uploaded to the database. This is implemented by using `SQLAlchemy` and the `psycopg2` driver to connect to the specified database, and the Pandas `to_sql` function to upload the data to the DB.
 ### Airflow DAG
 This is where the orchestration logic is organized as a DAG (Directed Acyclic Graph) inside the [stocks_pipeline.py](dags/stocks_pipeline.py) file. It implements Airflow's [TaskFlow API](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/taskflow.html) to facilitate the flow of data between the tasks.
+### General Structure
+```text
+ -------
+|Airflow|
+ -------
+    ⬇
+ ---------    
+|Pipeline |
+|---------|     -----------
+|Extract  | ⟵ |MASSIVE API|
+|   ⬇     |     -----------
+|Transform|
+|   ⬇     |  
+|  Load   |
+ ---------
+    ⬇
+ --------
+|Database|
+ --------
+```
+
 
 ## Environment Setup
 ### Python Virtual Environment
