@@ -59,7 +59,7 @@ This is where the orchestration logic is organized as a DAG (Directed Acyclic Gr
  -------
 |Airflow|
  -------
-    ⬇
+    ⬇ trigger
  ---------    
 |Pipeline |
 |---------|     -----------
