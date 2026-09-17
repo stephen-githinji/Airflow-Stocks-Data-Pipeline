@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-system = "setuptools.build_meta"
+
+[project]
+name = "stocks_data"
+version = "0.1.0"
+
+[tool.setuptools.packages.find]
+include = ["etl"]
+
+[tool.setuptools]
+py-modules = ["config"]
