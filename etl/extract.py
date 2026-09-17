@@ -32,7 +32,7 @@ tickers = {
 }
 
 
-limiter = AsyncLimiter(3, 35)
+limiter = AsyncLimiter(1, 15)
 async def get_stock_task(session, url, ticker):
     async with limiter:
         async with session.get(f"{url}/{ticker}/{test_date}", params= parameters) as response:
